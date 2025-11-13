@@ -1,4 +1,12 @@
-# LLM Resume ATS Optimizer 🚀
+# LLM Resume ATS Optimizer 🚀 Launching SOON 
+
+*My ATS Model Score is 90% on chatgpt*
+*Resume worded - Entry level is 94%*
+*Resume worded - Exp - 3-5 years is 83%*
+
+*Around 500 copy of manual tested comparing with overall + job description*
+
+Analyses resume of google, amazon , mircosoft resume --
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Flask](https://img.shields.io/badge/flask-3.0+-green.svg)](https://flask.palletsprojects.com/)
@@ -39,7 +47,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Rikin Shah**
 - GitHub: [@Rikinshah787](https://github.com/Rikinshah787)
-- Repository: [LaTeX-Resume-ATS-Optimizer](https://github.com/Rikinshah787/LaTeX-Resume-ATS-Optimizer)
 
 ---
 
