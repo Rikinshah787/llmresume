@@ -115,10 +115,18 @@
       // For now, just store in localStorage and show success
       // Backend integration coming soon
       const emails = JSON.parse(localStorage.getItem('llmresume_emails') || '[]');
-      if (!emails.includes(email)) {
-        emails.push(email);
-        localStorage.setItem('llmresume_emails', JSON.stringify(emails));
+      
+      if (emails.includes(email)) {
+        // Duplicate email
+        status.textContent = '✨ You\'re already on the list! We\'ll notify you when we launch.';
+        status.style.color = '#a78bfa';
+        emailInput.value = '';
+        return;
       }
+
+      // New email
+      emails.push(email);
+      localStorage.setItem('llmresume_emails', JSON.stringify(emails));
 
       status.textContent = '✅ Thanks! You\'ll be notified when we launch.';
       status.style.color = '#5eead4';
