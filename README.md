@@ -1,4 +1,4 @@
-me a codoe fo this # LLM Resume ATS Optimizer 🚀 Launching SOON 
+# LLM Resume ATS Optimizer 🚀 Launching SOON 
 
 *My ATS Model Score is 90% on chatgpt*
 *Resume worded - Entry level is 94%*
