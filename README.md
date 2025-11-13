@@ -31,8 +31,9 @@ Credit: Made by Riki Nshah
 Find the author
 -----------
 
-If people want to find the author or view GitHub records related to this project, they can search GitHub for the author's name:
+If people want to find the author or view GitHub records related to this project, they can visit the author's profiles:
 
-- GitHub search: https://github.com/search?q=Riki+Nshah
+- GitHub: https://github.com/rikinshah787
+- Portfolio: https://www.rikin.tech
 
-If you have an exact GitHub profile URL (for example, https://github.com/your-username), tell me and I'll update the footer and README to point directly to it.
+If you'd like the links changed (for example a different GitHub username), tell me and I'll update the footer and README.
