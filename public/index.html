@@ -13,8 +13,12 @@
       <div class="overlay"></div>
       <div class="container">
         <header class="brand">
-          <div class="logo">LLM<span class="accent">RESUME</span></div>
-          <nav class="credit">Made by Riki Nshah</nav>
+          <div class="logo">🚀 LLM<span class="accent">RESUME</span></div>
+          <div class="dev-icons">
+            <span class="icon" title="AI-Powered">🤖</span>
+            <span class="icon" title="Fast Processing">⚡</span>
+            <span class="icon" title="ATS Optimized">📄</span>
+          </div>
         </header>
 
         <section class="card">
@@ -35,10 +39,11 @@
             </div>
 
             <p class="soon">Sign up for early access — be the first to try it!</p>
-            <form class="signup" onsubmit="event.preventDefault(); alert('Thanks — you\'ll be notified (placeholder).')">
-              <input type="email" placeholder="Enter your email" aria-label="email" required>
+            <form class="signup" id="signup-form">
+              <input type="email" id="email-input" placeholder="Enter your email" aria-label="email" required>
               <button type="submit">Notify me</button>
             </form>
+            <p class="signup-status" id="signup-status"></p>
           </div>
           <div class="right">
             <div class="visual">

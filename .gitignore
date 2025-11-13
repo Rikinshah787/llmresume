@@ -12,3 +12,9 @@ dist/
 # OS
 Thumbs.db
 .DS_Store
+
+# Email collection data (private)
+emails.txt
+emails.json
+signups/
+*.log

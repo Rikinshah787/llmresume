@@ -93,3 +93,43 @@
   requestAnimationFrame(draw);
 
 })();
+
+// Email signup form handler
+(function(){
+  const form = document.getElementById('signup-form');
+  const emailInput = document.getElementById('email-input');
+  const status = document.getElementById('signup-status');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    
+    if (!email) return;
+
+    status.textContent = 'Submitting...';
+    status.style.color = 'var(--accent)';
+
+    try {
+      // For now, just store in localStorage and show success
+      // Backend integration coming soon
+      const emails = JSON.parse(localStorage.getItem('llmresume_emails') || '[]');
+      if (!emails.includes(email)) {
+        emails.push(email);
+        localStorage.setItem('llmresume_emails', JSON.stringify(emails));
+      }
+
+      status.textContent = '✅ Thanks! You\'ll be notified when we launch.';
+      status.style.color = '#5eead4';
+      emailInput.value = '';
+      
+      // Optional: send to a backend endpoint (when ready)
+      // await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
+
+    } catch (err) {
+      status.textContent = '❌ Something went wrong. Please try again.';
+      status.style.color = '#ff6b6b';
+    }
+  });
+})();
