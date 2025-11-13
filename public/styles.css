@@ -35,6 +35,18 @@ body{
 .footer .links a:hover{text-decoration:underline}
 .footer .links .sep{margin:0 8px;color:rgba(255,255,255,0.45)}
 
+/* Progress bar section */
+.progress-section{margin:24px 0;padding:18px;background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06);border-radius:12px;backdrop-filter:blur(8px)}
+.progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.progress-label{font-size:14px;color:rgba(255,255,255,0.85);font-weight:600}
+.progress-percent{font-size:18px;color:var(--accent);font-weight:700}
+.progress-bar{height:10px;background:rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;position:relative}
+.progress-fill{height:100%;background:linear-gradient(90deg, #5eead4, #7dd3fc, #a78bfa);border-radius:10px;transition:width 0.8s ease;box-shadow:0 0 16px rgba(94,234,212,0.5);animation:pulse 2s ease-in-out infinite}
+.launch-info{margin-top:10px;font-size:13px;color:rgba(255,255,255,0.7)}
+.launch-info strong{color:var(--accent);font-weight:600}
+
+@keyframes pulse{0%,100%{opacity:1} 50%{opacity:0.8}}
+
 @media (max-width:880px){
   .card{grid-template-columns:1fr;}
   .right{order:-1}
