@@ -1,0 +1,16 @@
+{
+  "name": "llmresume",
+  "version": "1.0.0",
+  "description": "AI-powered ATS resume optimizer - Landing page",
+  "private": true,
+  "scripts": {
+    "dev": "python -m http.server 8000 --directory public",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rikinshah787/llmresume.git"
+  },
+  "author": "Rikin Shah",
+  "license": "MIT"
+}
