@@ -12,7 +12,18 @@ This repository was created by an automated assistant at the user's request. Add
 
 This repository includes an optional `vercel.json` file with a basic configuration suitable for static sites or simple build setups. You can customize the `distDir` or build command depending on your framework. To deploy:
 
-- Connect this repository in the Vercel dashboard (https://vercel.com) and pick the appropriate build settings.
-- If you want me to push to a new GitHub remote and trigger a Vercel deploy, provide the remote URL or give me the go-ahead to create a GitHub repo.
 
 The provided `vercel.json` is a starting point and may be adjusted for frameworks like Next.js, Gatsby, or static HTML builds.
+
+Landing page
+-------------
+
+A modern one-page dark landing page has been added under `public/` with glassmorphism styling and a galaxy-like background. Files added:
+
+- `public/index.html` — landing page (hero, signup placeholder)
+- `public/styles.css` — styles for dark glass UI
+- `public/assets/hero.svg` — placeholder visual (replace with your image)
+
+This page uses a non-functional signup placeholder (JavaScript alert). Replace or wire up a real backend or mailing list integration when ready.
+
+Credit: Made by Riki Nshah
