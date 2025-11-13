@@ -1,11 +1,9 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "public/**/*", "use": "@vercel/static" }
-  ],
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": "public",
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/public/index.html" }
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
 
