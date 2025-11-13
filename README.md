@@ -10,19 +10,8 @@ A powerful Flask-based ATS resume optimizer that intelligently tailors your LaTe
 
 ## ✨ Features
 
-### 🤖 PRO Mode (Groq LLM)
-- **AI-Powered Rewriting**: Uses Groq's `llama-3.3-70b-versatile` model to intelligently rewrite bullets
-- **Smart Keyword Integration**: Naturally weaves job keywords into your experience
-- **Role Detection**: Automatically detects target role (Technical, Analytical, PM, DevOps, etc.)
-- **PM Terminology Enrichment**: Automatically injects PM buzzwords (roadmapping, stakeholder management, SDLC, OKRs/KPIs)
-- **Validation**: Ensures 20-25% word growth, prevents bloat and hallucinations
-- **API Key Rotation**: Supports multiple Groq accounts to handle rate limits
-
+### 🤖 PRO Mode (LLM)
 ### ⚡ SMART Mode (Rule-Based)
-- **Pattern-Based Injection**: Fast keyword insertion using proven patterns
-- **Categorized Skills**: Intelligently enhances 4-category skills format
-- **No API Required**: Works offline, no API keys needed
-- **Reliable Fallback**: Always available when PRO mode unavailable
 
 ### 📄 Resume Features
 - **Category Skills Format**
