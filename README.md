@@ -27,3 +27,12 @@ A modern one-page dark landing page has been added under `public/` with glassmor
 This page uses a non-functional signup placeholder (JavaScript alert). Replace or wire up a real backend or mailing list integration when ready.
 
 Credit: Made by Riki Nshah
+
+Find the author
+-----------
+
+If people want to find the author or view GitHub records related to this project, they can search GitHub for the author's name:
+
+- GitHub search: https://github.com/search?q=Riki+Nshah
+
+If you have an exact GitHub profile URL (for example, https://github.com/your-username), tell me and I'll update the footer and README to point directly to it.

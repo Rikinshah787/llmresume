@@ -13,8 +13,11 @@ body{
   background-attachment:fixed; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
 }
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:48px 24px}
-.overlay{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);background-size:20px 20px;opacity:0.6;mix-blend-mode:overlay}
-.container{position:relative;z-index:2;max-width:1100px;width:100%}
+.overlay{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);background-size:20px 20px;opacity:0.6;mix-blend-mode:overlay;z-index:2}
+.container{position:relative;z-index:3;max-width:1100px;width:100%}
+
+/* Fullscreen animated background canvas */
+#bg-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
 .brand{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
 .logo{font-weight:700;letter-spacing:1px;font-size:20px}
 .logo .accent{color:var(--accent);margin-left:6px}
@@ -27,7 +30,9 @@ body{
 .signup button{padding:12px 16px;border-radius:10px;border:none;background:linear-gradient(90deg, #5eead4, #7dd3fc);color:#021124;font-weight:700;cursor:pointer}
 .right .visual{display:flex;align-items:center;justify-content:center;padding:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;height:220px}
 .right img{max-width:100%;max-height:100%;display:block;filter:drop-shadow(0 8px 30px rgba(2,6,23,0.6))}
-.footer{margin-top:18px;color:rgba(255,255,255,0.5);font-size:13px}
+.footer{margin-top:18px;color:rgba(255,255,255,0.85);font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.footer .links a{color:var(--accent);text-decoration:none;font-weight:600}
+.footer .links a:hover{text-decoration:underline}
 
 @media (max-width:880px){
   .card{grid-template-columns:1fr;}
