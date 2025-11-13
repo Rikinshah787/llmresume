@@ -1,39 +1,48 @@
-# llmresume
+# LLM Resume ATS Optimizer 🚀
 
-A new repository scaffold named `llmresume`.
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Flask](https://img.shields.io/badge/flask-3.0+-green.svg)](https://flask.palletsprojects.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository was created by an automated assistant at the user's request. Add your project files here.
+A powerful Flask-based ATS resume optimizer that intelligently tailors your LaTeX resume to job descriptions. Choose between **AI-powered bullet rewriting** (PRO Mode with Groq LLM) or **fast rule-based keyword injection** (SMART Mode).
 
-## Next steps
-- Add source code or content for your resume project.
-- Configure CI, dependencies and tests as needed.
+---
 
-## Deploying to Vercel
+## ✨ Features
 
-This repository includes an optional `vercel.json` file with a basic configuration suitable for static sites or simple build setups. You can customize the `distDir` or build command depending on your framework. To deploy:
+### 🤖 PRO Mode (LLM)
+### ⚡ SMART Mode (Rule-Based)
 
+### 📄 Resume Features
+- **Category Skills Format**
+- **Template**: Professional single-page resume
+- **Web Interface**: Clean Flask UI for easy job description input
 
-The provided `vercel.json` is a starting point and may be adjusted for frameworks like Next.js, Gatsby, or static HTML builds.
+---
 
-Landing page
--------------
+## 🤝 Contributing
 
-A modern one-page dark landing page has been added under `public/` with glassmorphism styling and a galaxy-like background. Files added:
+Contributions welcome! Please:
 
-- `public/index.html` — landing page (hero, signup placeholder)
-- `public/styles.css` — styles for dark glass UI
-- `public/assets/hero.svg` — placeholder visual (replace with your image)
+Dm me or email me @rikinshah787@gmail.com
 
-This page uses a non-functional signup placeholder (JavaScript alert). Replace or wire up a real backend or mailing list integration when ready.
+Let's build Next generation ATS leveraging our friend AI...
+---
 
-Credit: Made by Riki Nshah
+## 📝 License
 
-Find the author
------------
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-If people want to find the author or view GitHub records related to this project, they can visit the author's profiles:
+---
 
-- GitHub: https://github.com/rikinshah787
-- Portfolio: https://www.rikin.tech
+## 📧 Contact
 
-If you'd like the links changed (for example a different GitHub username), tell me and I'll update the footer and README.
+**Rikin Shah**
+- GitHub: [@Rikinshah787](https://github.com/Rikinshah787)
+- Repository: [LaTeX-Resume-ATS-Optimizer](https://github.com/Rikinshah787/LaTeX-Resume-ATS-Optimizer)
+
+---
+
+## ⭐ Star History
+
+If you find this project helpful, please consider giving it a star! ⭐
