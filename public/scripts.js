@@ -128,12 +128,20 @@
       emails.push(email);
       localStorage.setItem('llmresume_emails', JSON.stringify(emails));
 
+      // Save to backend
+      try {
+        await fetch('/api/subscribe', { 
+          method: 'POST', 
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }) 
+        });
+      } catch (err) {
+        console.warn('Backend save failed (local storage still works):', err);
+      }
+
       status.textContent = '✅ Thanks! You\'ll be notified when we launch.';
       status.style.color = '#5eead4';
       emailInput.value = '';
-      
-      // Optional: send to a backend endpoint (when ready)
-      // await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
 
     } catch (err) {
       status.textContent = '❌ Something went wrong. Please try again.';
@@ -147,53 +155,34 @@
   const valueEl = document.getElementById('user-count-value');
   if (!valueEl) return;
 
-  const NS = 'llmresume_prod';
-  const KEY = 'global_users';
   const COUNTED_FLAG = 'llmresume_counted_v1';
-  const VID_KEY = 'llmresume_vid_v1';
+  const counted = localStorage.getItem(COUNTED_FLAG) === 'true';
 
-  // simple uuid fallback
-  function uuid(){
-    if (crypto && crypto.randomUUID) return crypto.randomUUID();
-    return 'xxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-      const r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
-      return v.toString(16);
-    });
-  }
-
-  try {
-    let vid = localStorage.getItem(VID_KEY);
-    if (!vid){ vid = uuid(); localStorage.setItem(VID_KEY, vid); }
-
-    const counted = localStorage.getItem(COUNTED_FLAG) === 'true';
-
-    async function getCount(){
-      const res = await fetch(`https://api.countapi.xyz/get/${NS}/${KEY}`);
-      if (!res.ok) throw new Error('get failed');
-      const data = await res.json();
-      return data.value || 0;
-    }
-
-    async function hitCount(){
-      const res = await fetch(`https://api.countapi.xyz/hit/${NS}/${KEY}`);
-      if (!res.ok) throw new Error('hit failed');
-      const data = await res.json();
-      return data.value || 0;
-    }
-
-    (async () => {
+  async function updateCount(){
+    try {
       valueEl.textContent = '...';
-      let val = 0;
-      if (!counted){
-        // first time on this browser: increment once
-        try{ val = await hitCount(); localStorage.setItem(COUNTED_FLAG, 'true'); }
-        catch{ /* fallback to get */ val = await getCount(); }
+      
+      let url;
+      if (!counted) {
+        // First visit: increment
+        url = 'https://api.countapi.xyz/hit/llmresume.vercel.app/visitors';
+        localStorage.setItem(COUNTED_FLAG, 'true');
       } else {
-        val = await getCount();
+        // Return visit: just get current count
+        url = 'https://api.countapi.xyz/get/llmresume.vercel.app/visitors';
       }
-      valueEl.textContent = val.toLocaleString();
-    })();
-  } catch {
-    valueEl.textContent = '—';
+      
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('API error');
+      
+      const data = await res.json();
+      const count = data.value || 0;
+      valueEl.textContent = count.toLocaleString();
+    } catch (err) {
+      console.error('Counter error:', err);
+      valueEl.textContent = '—';
+    }
   }
+
+  updateCount();
 })();
