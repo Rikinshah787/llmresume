@@ -53,6 +53,9 @@ body{
 .skill-pills .pill{font-size:8px;padding:3px 6px;background:linear-gradient(135deg, #667eea, #764ba2);color:#fff;border-radius:8px;font-weight:600}
 .ats-badge{position:absolute;bottom:8px;right:8px;font-size:8px;padding:4px 8px;background:linear-gradient(135deg, #5eead4, #7dd3fc);color:#021124;border-radius:12px;font-weight:700;box-shadow:0 2px 8px rgba(94,234,212,0.5)}
 .resume-shadow{position:absolute;bottom:-10px;left:10%;right:10%;height:20px;background:radial-gradient(ellipse, rgba(0,0,0,0.3), transparent);filter:blur(8px);z-index:1}
+/* Text lines inside mockup */
+.resume-text{margin:2px 0;font-size:8px;line-height:1.25;color:#2d3748;font-weight:500;letter-spacing:.2px}
+.resume-text:first-of-type{margin-top:4px}
 .footer{margin-top:18px;color:rgba(255,255,255,0.85);font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .footer .links a{color:var(--accent);text-decoration:none;font-weight:600}
 .footer .links a:hover{text-decoration:underline}
