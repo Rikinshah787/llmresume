@@ -159,29 +159,46 @@
   const counted = localStorage.getItem(COUNTED_FLAG) === 'true';
 
   async function updateCount(){
+    // Prefer server-side metrics endpoint (local) so we avoid third-party issues.
+    // The server will set/record uid via the cookie middleware on any API request.
     try {
       valueEl.textContent = '...';
-      
-      let url;
+
+      const opts = { credentials: 'same-origin' };
+
+      // Ensure we set counted flag locally so we don't spam remote counters
       if (!counted) {
-        // First visit: increment
-        url = 'https://api.countapi.xyz/hit/llmresume.vercel.app/visitors';
         localStorage.setItem(COUNTED_FLAG, 'true');
-      } else {
-        // Return visit: just get current count
-        url = 'https://api.countapi.xyz/get/llmresume.vercel.app/visitors';
       }
-      
-      const res = await fetch(url);
-      if (!res.ok) throw new Error('API error');
-      
-      const data = await res.json();
-      const count = data.value || 0;
-      valueEl.textContent = count.toLocaleString();
+
+      // Try local server metrics first
+      const res = await fetch('/api/metrics/unique', opts);
+      if (res.ok) {
+        const data = await res.json();
+        valueEl.textContent = (data.unique || 0).toLocaleString();
+        return;
+      }
+    } catch (err) {
+      console.warn('Local metrics failed:', err);
+    }
+
+    // Fallback to third-party countapi if server not available
+    try {
+      let url;
+      if (!counted) url = 'https://api.countapi.xyz/hit/llmresume.vercel.app/visitors';
+      else url = 'https://api.countapi.xyz/get/llmresume.vercel.app/visitors';
+
+      const res2 = await fetch(url);
+      if (res2.ok) {
+        const d2 = await res2.json();
+        valueEl.textContent = (d2.value || 0).toLocaleString();
+        return;
+      }
     } catch (err) {
       console.error('Counter error:', err);
-      valueEl.textContent = '—';
     }
+
+    valueEl.textContent = '—';
   }
 
   updateCount();

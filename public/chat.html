@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume ATS Chat</title>
+    <link rel="stylesheet" href="/chat.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Left: Siri-like Chat Column inside MacBook-style frame -->
+        <div class="mac-frame">
+            <div class="mac-top">
+                <span class="camera" aria-hidden="true"></span>
+            </div>
+            <aside class="sidebar chat-column">
+                <div class="chat-container">
+                    <div class="chat-avatar">
+                        <img src="/assets/sir-chatbot.png" alt="Sir Chatbot" />
+                        <div class="chatbot-name">Sir</div>
+                    </div>
+
+                    <div class="messages" id="messages">
+                        <!-- chat messages will be injected here -->
+                    </div>
+
+                    <div class="composer">
+                        <div class="typing-indicator" id="typing" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="composer-row">
+                            <input type="text" id="chat-input" placeholder="Ask Sir..." autocomplete="off">
+                            <button id="send-button" aria-label="Send message">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Right: Resume preview panel -->
+        <main class="content right-panel">
+            <div class="preview">
+                <h3>Resume Preview</h3>
+                <div class="preview-columns">
+                    <section class="current">
+                        <h4>Committed (.tex)</h4>
+                        <pre id="current-tex" class="tex-block">Loading...</pre>
+                    </section>
+                    <section class="proposed">
+                        <h4>Proposed (.tex)</h4>
+                        <pre id="proposed-tex" class="tex-block">No proposal yet.</pre>
+                        <div class="proposal-actions">
+                            <button id="accept-btn">Accept</button>
+                            <button id="decline-btn">Decline</button>
+                        </div>
+                        <div id="proposal-explanation" class="explanation"></div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+</body>
+</html>

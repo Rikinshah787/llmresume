@@ -1,0 +1,38 @@
+% FILE: server/templates/basic.tex
+\documentclass[11pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\begin{document}
+
+\begin{center}
+  {\LARGE \textbf{John Q. Public}}\\
+  \vspace{4pt}
+  \small
+  \href{mailto:john@example.com}{john@example.com} \quad | \quad (555) 555-5555 \quad | \quad \href{https://example.com}{example.com}
+\end{center}
+
+\vspace{6pt}
+
+\noindent\textbf{Summary}\\
+A concise resume summary describing experience, skills, and goals.
+
+\vspace{6pt}
+
+\noindent\textbf{Experience}\\
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Senior Engineer}, ExampleCorp (2020 -- Present)\\
+  Built things, improved processes, shipped features.
+  \item \textbf{Software Engineer}, SomeCompany (2016 -- 2020)\\
+  Worked on systems, tests, and deployments.
+\end{itemize}
+
+\vspace{6pt}
+
+\noindent\textbf{Education}\\
+\begin{itemize}[leftmargin=*]
+  \item B.S. in Computer Science --- University Name (2016)
+\end{itemize}
+
+\vfill
+\end{document}
